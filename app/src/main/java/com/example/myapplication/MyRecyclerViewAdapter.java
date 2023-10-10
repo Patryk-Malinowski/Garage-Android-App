@@ -5,6 +5,7 @@
 package com.example.myapplication;
 
 import android.content.Context;
+import android.icu.text.NumberFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,18 +19,21 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
+import java.util.Locale;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
 
     private List<String> mData; // car title
     private List<String> mYear; // car year
+    private List<Integer> mPrice; // car price
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
 
     // constructor
-    public MyRecyclerViewAdapter(Context context, List<String> mData, List<String> mYear) {
+    public MyRecyclerViewAdapter(Context context, List<String> mData, List<String> mYear, List<Integer> mPrice) {
         this.mData = mData;
         this.mYear = mYear;
+        this.mPrice = mPrice;
         this.mInflater = LayoutInflater.from(context);
     }
 
@@ -61,6 +65,12 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String name = mData.get(position);
         String year = mYear.get(position);
+        int price = mPrice.get(position); // price stored as int in case of calculations such as sort by price etc.
+
+        // format the price with a comma for thousands and Euro symbol at the start of price
+        String formattedPrice = formatPrice(price);
+
+        holder.carPrice.setText(formattedPrice);
         holder.carTitle.setText(name);
         holder.carYear.setText(year);
 
@@ -85,7 +95,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView carTitle, carYear;
+        TextView carTitle, carYear, carPrice;
         ImageView myImageView;
 
 
@@ -94,6 +104,8 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             carTitle = itemView.findViewById(R.id.carTitle);
             itemView.setOnClickListener(this);
             carYear = itemView.findViewById(R.id.carYear);
+            itemView.setOnClickListener(this);
+            carPrice = itemView.findViewById(R.id.carPrice);
             itemView.setOnClickListener(this);
             myImageView = itemView.findViewById(R.id.carImage);
             itemView.setOnClickListener(this);
@@ -111,7 +123,13 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
 
 
-
+    // helper method to format the price with a comma for thousands and add Euro symbol at the start of price
+    private String formatPrice(int price) {
+        // using NumberFormat to format the price with a comma for thousands
+        NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.getDefault());
+        // adding the Euro symbol when returning formatted price
+        return "€" + numberFormat.format(price);
+    }
 
 
 

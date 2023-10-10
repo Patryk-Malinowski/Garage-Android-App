@@ -40,11 +40,17 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
         carYear.add("2019");
         carYear.add("2018");
 
+        // sample data for car price
+        ArrayList<Integer> carPrice = new ArrayList<>();
+        carPrice.add(20000);
+        carPrice.add(15000);
+        carPrice.add(35000);
+
         // sets up RecycleView with a LinearLayoutManager
         rv.setLayoutManager(new LinearLayoutManager(this));
 
         // create an instance of the custom adapter (MyRecyclerViewAdapter) with the sample data
-        carListings = new MyRecyclerViewAdapter(this, carTitles, carYear);
+        carListings = new MyRecyclerViewAdapter(this, carTitles, carYear, carPrice);
 
         // set the click listener for the adapter allowing the handling of click events within the RecycleView
         carListings.setClickListener(this);

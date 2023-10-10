@@ -3,14 +3,15 @@
 <!--R00210173-->
 <!--Garage App Project-->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
     android:padding="16dp"
     android:layout_margin="8dp"
     android:background="@drawable/listing_background">
 
+
+<!--Car Image-->
     <ImageView
         android:id="@+id/carImage"
         android:layout_width="80dp"
@@ -19,26 +20,42 @@
         android:scaleType="centerCrop"
         android:src="@drawable/default_car_image" />
 
+<!--LinearLayout inside RelativeLayout containing car title and year-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/carImage"
         android:orientation="vertical">
 
+
+<!--Car title-->
         <TextView
             android:id="@+id/carTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Title goes here"
+            android:text="@string/title_goes_here"
             android:textSize="16sp" />
 
+<!--Car year-->
         <TextView
             android:id="@+id/carYear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Year goes here"
+            android:text="@string/year_goes_here"
             android:textSize="14sp" />
 
     </LinearLayout>
 
-</LinearLayout>
+<!--Car price-->
+    <TextView
+        android:id="@+id/carPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/price_goes_here"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:textSize="14sp" />
+
+</RelativeLayout>
