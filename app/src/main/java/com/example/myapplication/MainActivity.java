@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button cars = findViewById(R.id.buttonCars);
-        Button bikes = findViewById(R.id.buttonBikes);
-        Button other = findViewById(R.id.buttonOther);
+        ImageButton cars = findViewById(R.id.imageButtonCars);
+        ImageButton bikes = findViewById(R.id.imageButtonBikes);
+        ImageButton other = findViewById(R.id.imageButtonOther);
 
 
         // cars button

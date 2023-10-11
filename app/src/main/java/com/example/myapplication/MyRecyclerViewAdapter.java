@@ -26,14 +26,16 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     private List<String> mData; // car title
     private List<String> mYear; // car year
     private List<Integer> mPrice; // car price
+    private List<Integer> mImage; // car image
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
 
     // constructor
-    public MyRecyclerViewAdapter(Context context, List<String> mData, List<String> mYear, List<Integer> mPrice) {
+    public MyRecyclerViewAdapter(Context context, List<String> mData, List<String> mYear, List<Integer> mPrice, List<Integer> mImage) {
         this.mData = mData;
         this.mYear = mYear;
         this.mPrice = mPrice;
+        this.mImage = mImage;
         this.mInflater = LayoutInflater.from(context);
     }
 
@@ -75,11 +77,15 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         holder.carYear.setText(year);
 
 
+
+        // get the image resource ID from the ArrayList
+        int imageResourceId = mImage.get(position % mImage.size());
+
         // Use Glide to load images into ImageView
         Glide.with(holder.itemView.getContext())
-                .load(R.drawable.default_car_image)
+                .load(imageResourceId)
                 .fitCenter()
-                .apply(new RequestOptions().override(600, 200))
+                .apply(new RequestOptions().override(500, 200))
                 .into(holder.myImageView);
     }
 

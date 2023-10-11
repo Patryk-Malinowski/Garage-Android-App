@@ -34,6 +34,22 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
         carTitles.add("Audi A6 S-Line");
         carTitles.add("181 Range Rover Sport");
 
+        // limit the length of each title to 45 characters
+        for (int i = 0; i < carTitles.size(); i++) {
+            String originalTitle = carTitles.get(i);
+
+            // limit the title to 45 characters
+            String limitedTitle;
+            if (originalTitle.length() > 45) {
+                // if the original title is longer than 45 characters, truncate it to 45 characters and add an ellipsis (...)
+                limitedTitle = originalTitle.substring(0, 45) + "...";
+            } else {
+                limitedTitle = originalTitle;
+            }
+
+            carTitles.set(i, limitedTitle);
+        }
+
         // sample data for car years
         ArrayList<String> carYear = new ArrayList<>();
         carYear.add("2020");
@@ -46,11 +62,17 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
         carPrice.add(15000);
         carPrice.add(35000);
 
+        // sample data for car images
+        ArrayList<Integer> carImage = new ArrayList<>();
+        carImage.add(R.drawable.default_car_image);
+        carImage.add(R.drawable.audi);
+        carImage.add(R.drawable.default_car_image);
+
         // sets up RecycleView with a LinearLayoutManager
         rv.setLayoutManager(new LinearLayoutManager(this));
 
         // create an instance of the custom adapter (MyRecyclerViewAdapter) with the sample data
-        carListings = new MyRecyclerViewAdapter(this, carTitles, carYear, carPrice);
+        carListings = new MyRecyclerViewAdapter(this, carTitles, carYear, carPrice, carImage);
 
         // set the click listener for the adapter allowing the handling of click events within the RecycleView
         carListings.setClickListener(this);
