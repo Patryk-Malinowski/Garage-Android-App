@@ -164,25 +164,17 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
 
 
 
-    // toast method triggered when an item in the RecyclerView is clicked
     @Override
     public void onItemClick(View view, int position) {
-        // Show a toast message indicating the clicked item for testing purposes
-        Toast.makeText(RecyclerViewActivity.this, "You clicked on " + carListings.getItem(position), Toast.LENGTH_SHORT).show();
-
         // retrieve the data for the clicked item
         String selectedTitle = carListings.getTitle(position);
-//        String selectedYear = carListings.getYear(position);
-//        int selectedPrice = carListings.getPrice(position);
-        int selectedImageResource = carListings.getImageResource(position);
+       int selectedImageResource = carListings.getImageResource(position);
 
         // creates new intent that navigates from RecyclerViewActivity to ListingActivity
         Intent intent = new Intent(RecyclerViewActivity.this, ListingActivity.class);
 
         // put the selected data into the Intent as extras
         intent.putExtra("title", selectedTitle);
-//        intent.putExtra("year", selectedYear);
-//        intent.putExtra("price", selectedPrice);
         intent.putExtra("imageResource", selectedImageResource);
 
 
