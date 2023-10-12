@@ -5,18 +5,22 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class RecyclerViewActivity extends AppCompatActivity implements MyRecyclerViewAdapter.ItemClickListener {
     MyRecyclerViewAdapter carListings;
+    private boolean sortByPrice = false; // Default: do not sort by price
+
 
 
     @Override
@@ -53,6 +57,14 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
         } else if ("other".equals(category)) {
         }
 
+    // Find the switch
+        SwitchCompat priceSwitch = findViewById(R.id.switchPrice);
+
+        // Set an OnCheckedChangeListener for the switch
+        priceSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            sortByPrice = isChecked;
+            updateRecyclerViewWithCars(); // Call a method to update RecyclerView based on the sorting option
+        });
     }
 
     // update recyclerView with car data from ArrayLists
@@ -98,7 +110,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
         carPrice.add(0);
         carPrice.add(0);
         carPrice.add(0);
-        carPrice.add(0);
+        carPrice.add(2);
         carPrice.add(0);
         carPrice.add(0);
         carPrice.add(0);
@@ -129,6 +141,14 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
         carImage.add(R.drawable.default_car_image);
         carImage.add(R.drawable.default_car_image);
 
+
+        if (sortByPrice) {
+            SortDataByPrice.sort(carTitles, carYear, carPrice, carImage);
+            carListings.notifyDataSetChanged();
+        }
+        else {
+            carListings.notifyDataSetChanged();
+        }
 
         carListings.updateData(this, carTitles, carYear, carPrice, carImage);
 
