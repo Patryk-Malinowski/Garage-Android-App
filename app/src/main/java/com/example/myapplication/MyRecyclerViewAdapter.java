@@ -23,21 +23,32 @@ import java.util.Locale;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
 
-    private List<String> mData; // car title
-    private List<String> mYear; // car year
-    private List<Integer> mPrice; // car price
-    private List<Integer> mImage; // car image
+    private List<String> titles; // car title
+    private List<String> years; // car year
+    private List<Integer> prices; // car price
+    private List<Integer> images; // car image
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
 
     // constructor
-    public MyRecyclerViewAdapter(Context context, List<String> mData, List<String> mYear, List<Integer> mPrice, List<Integer> mImage) {
-        this.mData = mData;
-        this.mYear = mYear;
-        this.mPrice = mPrice;
-        this.mImage = mImage;
+    public MyRecyclerViewAdapter(Context context, List<String> titles, List<String> years, List<Integer> prices, List<Integer> images) {
+        this.titles = titles;
+        this.years = years;
+        this.prices = prices;
+        this.images = images;
         this.mInflater = LayoutInflater.from(context);
     }
+
+    // used to display appropriate data depending on what user chooses
+    public void updateData(Context context, List<String> titles, List<String> years, List<Integer> prices, List<Integer> images) {
+        this.titles = titles;
+        this.years = years;
+        this.prices = prices;
+        this.images = images;
+        this.mInflater = LayoutInflater.from(context);
+    }
+
+
 
     public interface ItemClickListener{
         void onItemClick(View view, int position);
@@ -65,9 +76,9 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     // load or set the data into the views
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String name = mData.get(position);
-        String year = mYear.get(position);
-        int price = mPrice.get(position); // price stored as int in case of calculations such as sort by price etc.
+        String name = titles.get(position);
+        String year = years.get(position);
+        int price = prices.get(position); // price stored as int in case of calculations such as sort by price etc.
 
         // format the price with a comma for thousands and Euro symbol at the start of price
         String formattedPrice = formatPrice(price);
@@ -79,7 +90,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
 
         // get the image resource ID from the ArrayList
-        int imageResourceId = mImage.get(position % mImage.size());
+        int imageResourceId = images.get(position % images.size());
 
         // Use Glide to load images into ImageView
         Glide.with(holder.itemView.getContext())
@@ -91,12 +102,12 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
 
     public String getItem(int id){
-        return mData.get(id);
+        return titles.get(id);
     }
 
     @Override
     public int getItemCount() {
-        return mData.size();
+        return titles.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

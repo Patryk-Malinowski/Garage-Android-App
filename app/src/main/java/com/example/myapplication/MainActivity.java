@@ -25,29 +25,45 @@ public class MainActivity extends AppCompatActivity {
         ImageButton other = findViewById(R.id.imageButtonOther);
 
 
-        // cars button
+        // cars imageButton
         cars.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // creates new intent that navigates from MainActivity to RecyclerViewActivity
                 Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
+
+                // add category information to the Intent
+                intent.putExtra("category", "cars");
+
                 startActivity(intent);
-                finish();
             }
         });
 
-        // bikes button
+        // bikes imageButton
         bikes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // creates new intent that navigates from MainActivity to RecyclerViewActivity
+                Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
 
+                // add category information to the Intent
+                intent.putExtra("category", "bikes");
+
+                startActivity(intent);
             }
         });
 
-        // other button
+        // other imageButton
         other.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // creates new intent that navigates from MainActivity to RecyclerViewActivity
+                Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
 
+                // add category information to the Intent
+                intent.putExtra("category", "other");
+
+                startActivity(intent);
             }
         });
 

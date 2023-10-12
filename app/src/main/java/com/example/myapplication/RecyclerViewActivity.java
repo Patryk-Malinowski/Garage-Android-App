@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class RecyclerViewActivity extends AppCompatActivity implements MyRecyclerViewAdapter.ItemClickListener{
+public class RecyclerViewActivity extends AppCompatActivity implements MyRecyclerViewAdapter.ItemClickListener {
     MyRecyclerViewAdapter carListings;
 
 
@@ -28,27 +28,40 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
         // find the RecyclerView by its ID
         RecyclerView rv = findViewById(R.id.recyclerView1);
 
+        // sets up RecycleView with a LinearLayoutManager
+        rv.setLayoutManager(new LinearLayoutManager(this));
+
+        // instantiate the carListings adapter
+        carListings = new MyRecyclerViewAdapter(this, new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
+
+        // set the click listener for the adapter allowing the handling of click events within the RecycleView
+        carListings.setClickListener(this);
+
+        // set carListings as the adapter for RecyclerView (rv)
+        rv.setAdapter(carListings);
+
+        // retrieve the category from the intent
+        String category = getIntent().getStringExtra("category");
+
+
+        // use the category to determine which data to display
+        if ("cars".equals(category)) {
+            updateRecyclerViewWithCars();
+        } else if ("bikes".equals(category)) {
+
+        } else if ("other".equals(category)) {
+        }
+
+    }
+
+    // update recyclerView with car data from ArrayLists
+    private void updateRecyclerViewWithCars() {
         // sample data for car titles
         ArrayList<String> carTitles = new ArrayList<>();
         carTitles.add("Mercedes C250 AMG");
         carTitles.add("Audi A6 S-Line");
         carTitles.add("181 Range Rover Sport");
 
-        // limit the length of each title to 45 characters
-        for (int i = 0; i < carTitles.size(); i++) {
-            String originalTitle = carTitles.get(i);
-
-            // limit the title to 45 characters
-            String limitedTitle;
-            if (originalTitle.length() > 45) {
-                // if the original title is longer than 45 characters, truncate it to 45 characters and add an ellipsis (...)
-                limitedTitle = originalTitle.substring(0, 45) + "...";
-            } else {
-                limitedTitle = originalTitle;
-            }
-
-            carTitles.set(i, limitedTitle);
-        }
 
         // sample data for car years
         ArrayList<String> carYear = new ArrayList<>();
@@ -67,21 +80,38 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
         carImage.add(R.drawable.default_car_image);
         carImage.add(R.drawable.audi);
         carImage.add(R.drawable.default_car_image);
+        carListings.updateData(this, carTitles, carYear, carPrice, carImage);
 
-        // sets up RecycleView with a LinearLayoutManager
-        rv.setLayoutManager(new LinearLayoutManager(this));
 
-        // create an instance of the custom adapter (MyRecyclerViewAdapter) with the sample data
-        carListings = new MyRecyclerViewAdapter(this, carTitles, carYear, carPrice, carImage);
+        // limit the length of each title to 35 characters
+//        for (int i = 0; i < carTitles.size(); i++) {
+//            String originalTitle = carTitles.get(i);
+//
+//            // limit the title to 35 characters
+//            String limitedTitle;
+//            if (originalTitle.length() > 35) {
+//                // if the original title is longer than 35 characters, truncate it to 35 characters and add an ellipsis (...)
+//                limitedTitle = originalTitle.substring(0, 35) + "...";
+//            } else {
+//                limitedTitle = originalTitle;
+//            }
+//
+//            carTitles.set(i, limitedTitle);
+//        }
+    }
 
-        // set the click listener for the adapter allowing the handling of click events within the RecycleView
-        carListings.setClickListener(this);
-
-        // set carListings as the adapter for RecyclerView (rv)
-        rv.setAdapter(carListings);
-
+    // update recyclerView with bike data from ArrayLists
+    private void updateRecyclerViewWithBikes() {
 
     }
+
+    // update recyclerView with other data from ArrayLists
+    private void updateRecyclerViewWithOther() {
+
+    }
+
+
+
 
 
     // toast method triggered when an item in the RecyclerView is clicked

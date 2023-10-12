@@ -3,7 +3,5 @@
     <string name="price_goes_here">Price goes here</string>
     <string name="year_goes_here">Year goes here</string>
     <string name="title_goes_here">Title goes here</string>
-    <string name="bikes">Bikes</string>
-    <string name="cars">Cars</string>
-    <string name="other">Other</string>
+    <string name="heading">Welcome to your Garage</string>
 </resources>
