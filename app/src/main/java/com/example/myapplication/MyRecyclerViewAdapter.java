@@ -49,6 +49,26 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     }
 
 
+    // get the title of the item at the specified position
+    public String getTitle(int position) {
+        return titles.get(position);
+    }
+
+    // get the year of the item at the specified position
+    public String getYear(int position) {
+        return years.get(position);
+    }
+
+    // get the price of the item at the specified position
+    public int getPrice(int position) {
+        return prices.get(position);
+    }
+
+    // get the image resource ID of the item at the specified position
+    public int getImageResource(int position) {
+        return images.get(position);
+    }
+
 
     public interface ItemClickListener{
         void onItemClick(View view, int position);

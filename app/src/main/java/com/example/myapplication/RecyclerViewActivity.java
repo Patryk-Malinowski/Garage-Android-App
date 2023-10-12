@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -56,48 +57,97 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
 
     // update recyclerView with car data from ArrayLists
     private void updateRecyclerViewWithCars() {
-        // sample data for car titles
+        // data for car titles
         ArrayList<String> carTitles = new ArrayList<>();
-        carTitles.add("Mercedes C250 AMG");
-        carTitles.add("Audi A6 S-Line");
-        carTitles.add("181 Range Rover Sport");
+        carTitles.add("");
+        carTitles.add("");
+        carTitles.add("");
+        carTitles.add("");
+        carTitles.add("");
+        carTitles.add("");
+        carTitles.add("");
+        carTitles.add("");
+        carTitles.add("");
+        carTitles.add("");
+        carTitles.add("");
+        carTitles.add("");
+        carTitles.add("");
+        carTitles.add("");
+        carTitles.add("");
 
-
-        // sample data for car years
+        // data for car years
         ArrayList<String> carYear = new ArrayList<>();
-        carYear.add("2020");
-        carYear.add("2019");
-        carYear.add("2018");
+        carYear.add("2000");
+        carYear.add("2000");
+        carYear.add("2000");
+        carYear.add("2000");
+        carYear.add("2000");
+        carYear.add("2000");
+        carYear.add("2000");
+        carYear.add("2000");
+        carYear.add("2000");
+        carYear.add("2000");
+        carYear.add("2000");
+        carYear.add("2000");
+        carYear.add("2000");
+        carYear.add("2000");
+        carYear.add("2000");
 
-        // sample data for car price
+        // data for car price
         ArrayList<Integer> carPrice = new ArrayList<>();
-        carPrice.add(20000);
-        carPrice.add(15000);
-        carPrice.add(35000);
+        carPrice.add(0);
+        carPrice.add(0);
+        carPrice.add(0);
+        carPrice.add(0);
+        carPrice.add(0);
+        carPrice.add(0);
+        carPrice.add(0);
+        carPrice.add(0);
+        carPrice.add(0);
+        carPrice.add(0);
+        carPrice.add(0);
+        carPrice.add(0);
+        carPrice.add(0);
+        carPrice.add(0);
+        carPrice.add(0);
 
-        // sample data for car images
+        // data for car images
         ArrayList<Integer> carImage = new ArrayList<>();
         carImage.add(R.drawable.default_car_image);
-        carImage.add(R.drawable.audi);
         carImage.add(R.drawable.default_car_image);
+        carImage.add(R.drawable.default_car_image);
+        carImage.add(R.drawable.default_car_image);
+        carImage.add(R.drawable.default_car_image);
+        carImage.add(R.drawable.default_car_image);
+        carImage.add(R.drawable.default_car_image);
+        carImage.add(R.drawable.default_car_image);
+        carImage.add(R.drawable.default_car_image);
+        carImage.add(R.drawable.default_car_image);
+        carImage.add(R.drawable.default_car_image);
+        carImage.add(R.drawable.default_car_image);
+        carImage.add(R.drawable.default_car_image);
+        carImage.add(R.drawable.default_car_image);
+        carImage.add(R.drawable.default_car_image);
+
+
         carListings.updateData(this, carTitles, carYear, carPrice, carImage);
 
 
-        // limit the length of each title to 35 characters
-//        for (int i = 0; i < carTitles.size(); i++) {
-//            String originalTitle = carTitles.get(i);
-//
-//            // limit the title to 35 characters
-//            String limitedTitle;
-//            if (originalTitle.length() > 35) {
-//                // if the original title is longer than 35 characters, truncate it to 35 characters and add an ellipsis (...)
-//                limitedTitle = originalTitle.substring(0, 35) + "...";
-//            } else {
-//                limitedTitle = originalTitle;
-//            }
-//
-//            carTitles.set(i, limitedTitle);
-//        }
+        // limit the length of each title to 25 characters
+        for (int i = 0; i < carTitles.size(); i++) {
+            String originalTitle = carTitles.get(i);
+
+            // limit the title to 25 characters
+            String limitedTitle;
+            if (originalTitle.length() > 25) {
+                // if the original title is longer than 25 characters, truncate it to 25 characters and add an ellipsis (...)
+                limitedTitle = originalTitle.substring(0, 25) + "...";
+            } else {
+                limitedTitle = originalTitle;
+            }
+
+            carTitles.set(i, limitedTitle);
+        }
     }
 
     // update recyclerView with bike data from ArrayLists
@@ -119,6 +169,24 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
     public void onItemClick(View view, int position) {
         // Show a toast message indicating the clicked item for testing purposes
         Toast.makeText(RecyclerViewActivity.this, "You clicked on " + carListings.getItem(position), Toast.LENGTH_SHORT).show();
+
+        // retrieve the data for the clicked item
+        String selectedTitle = carListings.getTitle(position);
+//        String selectedYear = carListings.getYear(position);
+//        int selectedPrice = carListings.getPrice(position);
+        int selectedImageResource = carListings.getImageResource(position);
+
+        // creates new intent that navigates from RecyclerViewActivity to ListingActivity
+        Intent intent = new Intent(RecyclerViewActivity.this, ListingActivity.class);
+
+        // put the selected data into the Intent as extras
+        intent.putExtra("title", selectedTitle);
+//        intent.putExtra("year", selectedYear);
+//        intent.putExtra("price", selectedPrice);
+        intent.putExtra("imageResource", selectedImageResource);
+
+
+        startActivity(intent);
     }
 
 
