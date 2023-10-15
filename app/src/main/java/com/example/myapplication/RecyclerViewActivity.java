@@ -69,93 +69,23 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
 
     // update recyclerView with car data from ArrayLists
     private void updateRecyclerViewWithCars() {
-        // data for car titles
-        ArrayList<String> carTitles = new ArrayList<>();
-        carTitles.add("");
-        carTitles.add("");
-        carTitles.add("");
-        carTitles.add("");
-        carTitles.add("");
-        carTitles.add("");
-        carTitles.add("");
-        carTitles.add("");
-        carTitles.add("");
-        carTitles.add("");
-        carTitles.add("");
-        carTitles.add("");
-        carTitles.add("");
-        carTitles.add("");
-        carTitles.add("");
-
-        // data for car years
-        ArrayList<String> carYear = new ArrayList<>();
-        carYear.add("2000");
-        carYear.add("2000");
-        carYear.add("2000");
-        carYear.add("2000");
-        carYear.add("2000");
-        carYear.add("2000");
-        carYear.add("2000");
-        carYear.add("2000");
-        carYear.add("2000");
-        carYear.add("2000");
-        carYear.add("2000");
-        carYear.add("2000");
-        carYear.add("2000");
-        carYear.add("2000");
-        carYear.add("2000");
-
-        // data for car price
-        ArrayList<Integer> carPrice = new ArrayList<>();
-        carPrice.add(0);
-        carPrice.add(0);
-        carPrice.add(0);
-        carPrice.add(2);
-        carPrice.add(0);
-        carPrice.add(0);
-        carPrice.add(0);
-        carPrice.add(0);
-        carPrice.add(0);
-        carPrice.add(0);
-        carPrice.add(0);
-        carPrice.add(0);
-        carPrice.add(0);
-        carPrice.add(0);
-        carPrice.add(0);
-
-        // data for car images
-        ArrayList<Integer> carImage = new ArrayList<>();
-        carImage.add(R.drawable.default_car_image);
-        carImage.add(R.drawable.default_car_image);
-        carImage.add(R.drawable.default_car_image);
-        carImage.add(R.drawable.default_car_image);
-        carImage.add(R.drawable.default_car_image);
-        carImage.add(R.drawable.default_car_image);
-        carImage.add(R.drawable.default_car_image);
-        carImage.add(R.drawable.default_car_image);
-        carImage.add(R.drawable.default_car_image);
-        carImage.add(R.drawable.default_car_image);
-        carImage.add(R.drawable.default_car_image);
-        carImage.add(R.drawable.default_car_image);
-        carImage.add(R.drawable.default_car_image);
-        carImage.add(R.drawable.default_car_image);
-        carImage.add(R.drawable.default_car_image);
+        CarData.loadCarData();
 
 
         if (sortByPrice) {
-            SortDataByPrice.sort(carTitles, carYear, carPrice, carImage);
+            SortDataByPrice.sort(CarData.carTitles, CarData.carYear, CarData.carPrice, CarData.carImage);
             carListings.notifyDataSetChanged();
         }
         else {
             carListings.notifyDataSetChanged();
         }
 
-        carListings.updateData(this, carTitles, carYear, carPrice, carImage);
+        carListings.updateData(this, CarData.carTitles, CarData.carYear, CarData.carPrice, CarData.carImage);
 
 
         // limit the length of each title to 25 characters
-        for (int i = 0; i < carTitles.size(); i++) {
-            String originalTitle = carTitles.get(i);
+        for (int i = 0; i < CarData.carTitles.size(); i++) {
+            String originalTitle = CarData.carTitles.get(i);
 
             // limit the title to 25 characters
             String limitedTitle;
@@ -166,7 +96,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
                 limitedTitle = originalTitle;
             }
 
-            carTitles.set(i, limitedTitle);
+            CarData.carTitles.set(i, limitedTitle);
         }
     }
 
