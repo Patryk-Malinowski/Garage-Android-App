@@ -53,8 +53,9 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
         if ("cars".equals(category)) {
             updateRecyclerViewWithCars();
         } else if ("bikes".equals(category)) {
-
+            updateRecyclerViewWithBikes();
         } else if ("other".equals(category)) {
+            updateRecyclerViewWithOther();
         }
 
     // Find the switch
@@ -82,22 +83,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
 
         carListings.updateData(this, CarData.carTitles, CarData.carYear, CarData.carPrice, CarData.carImage);
 
-
-        // limit the length of each title to 25 characters
-        for (int i = 0; i < CarData.carTitles.size(); i++) {
-            String originalTitle = CarData.carTitles.get(i);
-
-            // limit the title to 25 characters
-            String limitedTitle;
-            if (originalTitle.length() > 25) {
-                // if the original title is longer than 25 characters, truncate it to 25 characters and add an ellipsis (...)
-                limitedTitle = originalTitle.substring(0, 25) + "...";
-            } else {
-                limitedTitle = originalTitle;
-            }
-
-            CarData.carTitles.set(i, limitedTitle);
-        }
+        TitleCharLimit.limitTitleLength(CarData.carTitles);
     }
 
     // update recyclerView with bike data from ArrayLists
