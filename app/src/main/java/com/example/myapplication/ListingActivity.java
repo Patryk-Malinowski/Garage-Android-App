@@ -2,8 +2,11 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -56,8 +59,17 @@ public class ListingActivity extends AppCompatActivity {
     }
 
     public void onViewAdClick() {
-
+        Intent intent = getIntent();
+        Uri uri_web = Uri.parse(intent.getStringExtra("url"));
+        Intent intent_show_webpage = new Intent(Intent.ACTION_VIEW, uri_web);
+        try {
+            startActivity(intent_show_webpage);
+        }
+        catch (ActivityNotFoundException e) {
+            // toast for exception
+        }
     }
+
 
     public void onGoBackClick() {
         finish(); // close the current activity -> go to previous activity

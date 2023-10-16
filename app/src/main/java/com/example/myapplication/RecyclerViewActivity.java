@@ -37,7 +37,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
         rv.setLayoutManager(new LinearLayoutManager(this));
 
         // instantiate the carListings adapter
-        carListings = new MyRecyclerViewAdapter(this, new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
+        carListings = new MyRecyclerViewAdapter(this, new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
 
         // set the click listener for the adapter allowing the handling of click events within the RecycleView
         carListings.setClickListener(this);
@@ -81,7 +81,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
             carListings.notifyDataSetChanged();
         }
 
-        carListings.updateData(this, CarData.carTitles, CarData.carYear, CarData.carPrice, CarData.carImage);
+        carListings.updateData(this, CarData.carTitles, CarData.carYear, CarData.carPrice, CarData.carImage, CarData.carUrl);
 
         TitleCharLimit.limitTitleLength(CarData.carTitles);
     }
@@ -99,7 +99,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
             carListings.notifyDataSetChanged();
         }
 
-        carListings.updateData(this, BikeData.bikeTitles, BikeData.bikeYear, BikeData.bikePrice, BikeData.bikeImage);
+        carListings.updateData(this, BikeData.bikeTitles, BikeData.bikeYear, BikeData.bikePrice, BikeData.bikeImage, BikeData.bikeUrl);
 
         TitleCharLimit.limitTitleLength(BikeData.bikeTitles);
     }
@@ -117,7 +117,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
             carListings.notifyDataSetChanged();
         }
 
-        carListings.updateData(this, OtherData.otherTitles, OtherData.otherYear, OtherData.otherPrice, OtherData.otherImage);
+        carListings.updateData(this, OtherData.otherTitles, OtherData.otherYear, OtherData.otherPrice, OtherData.otherImage, OtherData.otherUrl);
 
         TitleCharLimit.limitTitleLength(OtherData.otherTitles);
     }
@@ -130,7 +130,8 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
     public void onItemClick(View view, int position) {
         // retrieve the data for the clicked item
         String selectedTitle = carListings.getTitle(position);
-       int selectedImageResource = carListings.getImageResource(position);
+        int selectedImageResource = carListings.getImageResource(position);
+        String selectedUrl = carListings.getUrl(position);
 
         // creates new intent that navigates from RecyclerViewActivity to ListingActivity
         Intent intent = new Intent(RecyclerViewActivity.this, ListingActivity.class);
@@ -138,10 +139,14 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
         // put the selected data into the Intent as extras
         intent.putExtra("title", selectedTitle);
         intent.putExtra("imageResource", selectedImageResource);
+        intent.putExtra("url", selectedUrl);
 
 
         startActivity(intent);
     }
+
+
+
 
 
 }

@@ -27,24 +27,27 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     private List<String> years; // car year
     private List<Integer> prices; // car price
     private List<Integer> images; // car image
+    private List<String> url; // car image
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
 
     // constructor
-    public MyRecyclerViewAdapter(Context context, List<String> titles, List<String> years, List<Integer> prices, List<Integer> images) {
+    public MyRecyclerViewAdapter(Context context, List<String> titles, List<String> years, List<Integer> prices, List<Integer> images, List<String> url) {
         this.titles = titles;
         this.years = years;
         this.prices = prices;
         this.images = images;
+        this.url = url;
         this.mInflater = LayoutInflater.from(context);
     }
 
     // used to display appropriate data depending on what user chooses
-    public void updateData(Context context, List<String> titles, List<String> years, List<Integer> prices, List<Integer> images) {
+    public void updateData(Context context, List<String> titles, List<String> years, List<Integer> prices, List<Integer> images, List<String> url) {
         this.titles = titles;
         this.years = years;
         this.prices = prices;
         this.images = images;
+        this.url = url;
         this.mInflater = LayoutInflater.from(context);
     }
 
@@ -52,6 +55,9 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     // get the title of the item at the specified position
     public String getTitle(int position) {
         return titles.get(position);
+    }
+    public String getUrl(int position) {
+        return url.get(position);
     }
 
     // get the year of the item at the specified position

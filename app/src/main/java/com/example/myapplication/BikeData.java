@@ -16,7 +16,7 @@ public class BikeData {
 
 
         // data for bike titles
-        bikeTitles.add("");
+        bikeTitles.add("2020 Kawasaki Z1000SX");
         bikeTitles.add("");
         bikeTitles.add("");
         bikeTitles.add("");
@@ -33,24 +33,24 @@ public class BikeData {
         bikeTitles.add("");
 
         // data for bike years
-        bikeYear.add("2000");
-        bikeYear.add("2000");
-        bikeYear.add("2000");
-        bikeYear.add("2000");
-        bikeYear.add("2000");
-        bikeYear.add("2000");
-        bikeYear.add("2000");
-        bikeYear.add("2000");
-        bikeYear.add("2000");
-        bikeYear.add("2000");
-        bikeYear.add("2000");
-        bikeYear.add("2000");
-        bikeYear.add("2000");
-        bikeYear.add("2000");
-        bikeYear.add("2000");
+        bikeYear.add("2020");
+        bikeYear.add("");
+        bikeYear.add("");
+        bikeYear.add("");
+        bikeYear.add("");
+        bikeYear.add("");
+        bikeYear.add("");
+        bikeYear.add("");
+        bikeYear.add("");
+        bikeYear.add("");
+        bikeYear.add("");
+        bikeYear.add("");
+        bikeYear.add("");
+        bikeYear.add("");
+        bikeYear.add("");
 
         // data for bike price
-        bikePrice.add(0);
+        bikePrice.add(13950);
         bikePrice.add(0);
         bikePrice.add(0);
         bikePrice.add(2);
@@ -67,7 +67,7 @@ public class BikeData {
         bikePrice.add(0);
 
         // data for bike images
-        bikeImage.add(R.drawable.default_car_image);
+        bikeImage.add(R.drawable.bike1);
         bikeImage.add(R.drawable.default_car_image);
         bikeImage.add(R.drawable.default_car_image);
         bikeImage.add(R.drawable.default_car_image);
@@ -84,7 +84,7 @@ public class BikeData {
         bikeImage.add(R.drawable.default_car_image);
 
         // data for bike URLs
-        bikeUrl.add("");
+        bikeUrl.add("https://www.leehondacentre.com/product-page/2020-kawasaki-z1000sx");
         bikeUrl.add("");
         bikeUrl.add("");
         bikeUrl.add("");
