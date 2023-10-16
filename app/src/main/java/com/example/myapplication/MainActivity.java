@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,52 +22,33 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageButton cars = findViewById(R.id.imageButtonCars);
-        ImageButton bikes = findViewById(R.id.imageButtonBikes);
-        ImageButton other = findViewById(R.id.imageButtonOther);
+        RadioGroup radioGroup = findViewById(R.id.radioGroup);
+
+        Button continueButton = findViewById(R.id.buttonContinue);
 
 
-        // cars imageButton
-        cars.setOnClickListener(new View.OnClickListener() {
+        // continue button click listener
+        continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // creates new intent that navigates from MainActivity to RecyclerViewActivity
-                Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
+                int selectedRadioButtonId = radioGroup.getCheckedRadioButtonId();
 
-                // add category information to the Intent
-                intent.putExtra("category", "cars");
+                // if a radio button is selected
+                if (selectedRadioButtonId != -1) {
+                    RadioButton selectedRadioButton = findViewById(selectedRadioButtonId);
+                    String selectedText = selectedRadioButton.getText().toString();
 
-                startActivity(intent);
+
+                    // start the RecyclerViewActivity
+                    Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
+                    intent.putExtra("category", selectedText.toLowerCase()); // passes category based on selected radio button
+                    startActivity(intent);
+                }
             }
         });
 
-        // bikes imageButton
-        bikes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // creates new intent that navigates from MainActivity to RecyclerViewActivity
-                Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
 
-                // add category information to the Intent
-                intent.putExtra("category", "bikes");
 
-                startActivity(intent);
-            }
-        });
-
-        // other imageButton
-        other.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // creates new intent that navigates from MainActivity to RecyclerViewActivity
-                Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
-
-                // add category information to the Intent
-                intent.putExtra("category", "other");
-
-                startActivity(intent);
-            }
-        });
 
 
 

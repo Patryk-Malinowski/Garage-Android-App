@@ -4,4 +4,8 @@
     <string name="year_goes_here">Year goes here</string>
     <string name="title_goes_here">Title goes here</string>
     <string name="heading">Welcome to your Garage</string>
+    <string name="continueButton">Continue</string>
+    <string name="cars">Cars</string>
+    <string name="bikes">Bikes</string>
+    <string name="other">Other</string>
 </resources>
