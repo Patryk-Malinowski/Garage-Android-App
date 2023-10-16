@@ -11,6 +11,7 @@ public class OtherData {
     public static ArrayList<Integer> otherPrice = new ArrayList<>();
     public static ArrayList<Integer> otherImage = new ArrayList<>();
     public static ArrayList<String> otherUrl = new ArrayList<>();
+    public static ArrayList<String> otherYear = new ArrayList<>();
     public static void loadOtherData() {
 
 
@@ -30,6 +31,23 @@ public class OtherData {
         otherTitles.add("");
         otherTitles.add("");
         otherTitles.add("");
+
+        // data for other years (NOT USED, ITS HERE TO SIMPLIFY THE LOADING LOGIC OF LISTINGS)
+        otherYear.add("");
+        otherYear.add("");
+        otherYear.add("");
+        otherYear.add("");
+        otherYear.add("");
+        otherYear.add("");
+        otherYear.add("");
+        otherYear.add("");
+        otherYear.add("");
+        otherYear.add("");
+        otherYear.add("");
+        otherYear.add("");
+        otherYear.add("");
+        otherYear.add("");
+        otherYear.add("");
 
 
         // data for other price

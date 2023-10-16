@@ -88,12 +88,38 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
 
     // update recyclerView with bike data from ArrayLists
     private void updateRecyclerViewWithBikes() {
+        BikeData.loadBikeData();
 
+
+        if (sortByPrice) {
+            SortDataByPrice.sort(BikeData.bikeTitles, BikeData.bikeYear, BikeData.bikePrice, BikeData.bikeImage);
+            carListings.notifyDataSetChanged();
+        }
+        else {
+            carListings.notifyDataSetChanged();
+        }
+
+        carListings.updateData(this, BikeData.bikeTitles, BikeData.bikeYear, BikeData.bikePrice, BikeData.bikeImage);
+
+        TitleCharLimit.limitTitleLength(BikeData.bikeTitles);
     }
 
     // update recyclerView with other data from ArrayLists
     private void updateRecyclerViewWithOther() {
+        OtherData.loadOtherData();
 
+
+        if (sortByPrice) {
+            SortDataByPrice.sort(OtherData.otherTitles, OtherData.otherYear, OtherData.otherPrice, OtherData.otherImage);
+            carListings.notifyDataSetChanged();
+        }
+        else {
+            carListings.notifyDataSetChanged();
+        }
+
+        carListings.updateData(this, OtherData.otherTitles, OtherData.otherYear, OtherData.otherPrice, OtherData.otherImage);
+
+        TitleCharLimit.limitTitleLength(OtherData.otherTitles);
     }
 
 
