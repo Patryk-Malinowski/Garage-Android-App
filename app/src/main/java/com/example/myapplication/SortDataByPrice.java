@@ -7,7 +7,7 @@ package com.example.myapplication;
 import java.util.ArrayList;
 
 public class SortDataByPrice {
-    protected static void sort(ArrayList<String> titles, ArrayList<String> years, ArrayList<Integer> prices, ArrayList<Integer> images) {
+    protected static void sort(ArrayList<String> titles, ArrayList<String> years, ArrayList<Integer> prices, ArrayList<Integer> images, ArrayList<String> url) {
         // Sort the data in parallel arrays based on prices using bubble sort
         int n = prices.size();
         boolean swapped = true;
@@ -35,6 +35,11 @@ public class SortDataByPrice {
                     int tempImage = images.get(i - 1);
                     images.set(i - 1, images.get(i));
                     images.set(i, tempImage);
+
+                    // Swap urls
+                    String tempUrl = url.get(i - 1);
+                    url.set(i - 1, url.get(i));
+                    url.set(i, tempUrl);
 
                     swapped = true;
                 }

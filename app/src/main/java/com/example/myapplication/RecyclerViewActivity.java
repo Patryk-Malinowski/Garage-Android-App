@@ -64,17 +64,32 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
         // Set an OnCheckedChangeListener for the switch
         priceSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             sortByPrice = isChecked;
-            updateRecyclerViewWithCars(); // Call a method to update RecyclerView based on the sorting option
+            // use the category to determine which data to display
+            if ("cars".equals(category)) {
+                updateRecyclerViewWithCars();
+            } else if ("bikes".equals(category)) {
+                updateRecyclerViewWithBikes();
+            } else if ("other".equals(category)) {
+                updateRecyclerViewWithOther();
+            }
         });
     }
 
     // update recyclerView with car data from ArrayLists
     private void updateRecyclerViewWithCars() {
+        // Clear existing data
+        CarData.carTitles.clear();
+        CarData.carYear.clear();
+        CarData.carPrice.clear();
+        CarData.carImage.clear();
+        CarData.carUrl.clear();
+
+
         CarData.loadCarData();
 
 
         if (sortByPrice) {
-            SortDataByPrice.sort(CarData.carTitles, CarData.carYear, CarData.carPrice, CarData.carImage);
+            SortDataByPrice.sort(CarData.carTitles, CarData.carYear, CarData.carPrice, CarData.carImage, CarData.carUrl);
             carListings.notifyDataSetChanged();
         }
         else {
@@ -88,11 +103,18 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
 
     // update recyclerView with bike data from ArrayLists
     private void updateRecyclerViewWithBikes() {
+        // Clear existing data
+        BikeData.bikeTitles.clear();
+        BikeData.bikeYear.clear();
+        BikeData.bikePrice.clear();
+        BikeData.bikeImage.clear();
+        BikeData.bikeUrl.clear();
+
         BikeData.loadBikeData();
 
 
         if (sortByPrice) {
-            SortDataByPrice.sort(BikeData.bikeTitles, BikeData.bikeYear, BikeData.bikePrice, BikeData.bikeImage);
+            SortDataByPrice.sort(BikeData.bikeTitles, BikeData.bikeYear, BikeData.bikePrice, BikeData.bikeImage, BikeData.bikeUrl);
             carListings.notifyDataSetChanged();
         }
         else {
@@ -106,11 +128,18 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
 
     // update recyclerView with other data from ArrayLists
     private void updateRecyclerViewWithOther() {
+        // Clear existing data
+        OtherData.otherTitles.clear();
+        OtherData.otherYear.clear();
+        OtherData.otherPrice.clear();
+        OtherData.otherImage.clear();
+        OtherData.otherUrl.clear();
+
         OtherData.loadOtherData();
 
 
         if (sortByPrice) {
-            SortDataByPrice.sort(OtherData.otherTitles, OtherData.otherYear, OtherData.otherPrice, OtherData.otherImage);
+            SortDataByPrice.sort(OtherData.otherTitles, OtherData.otherYear, OtherData.otherPrice, OtherData.otherImage, OtherData.otherUrl);
             carListings.notifyDataSetChanged();
         }
         else {
