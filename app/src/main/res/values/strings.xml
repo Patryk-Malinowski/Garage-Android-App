@@ -19,8 +19,24 @@
     <string name="bikeUrl9">https://www.leehondacentre.com/product-page/2023-kawasaki-z1000sx-ninja</string>
     <string name="bikeUrl10">https://www.leehondacentre.com/product-page/2022-honda-cbr500r</string>
     <string name="bikeUrl11">https://www.leehondacentre.com/product-page/2023-honda-adv350</string>
-    <string name="bikeUrl12">https://www.leehondacentre.com/product-page/2007-honda-deauville-nt700-1</string>
+    <string name="bikeUrl12">https://www.leehondacentre.com/product–page/2007–honda–deauville–nt700–1</string>
     <string name="bikeUrl13">https://www.leehondacentre.com/product-page/2018-yamaha-mt-07a</string>
     <string name="bikeUrl14">https://www.leehondacentre.com/product-page/2021-ducati-supersport-s</string>
     <string name="bikeUrl15">https://www.leehondacentre.com/product-page/2005-suzuki-sv650</string>
+    <string name="carUrl1">https://www.blackwatermotors.ie/used-cars/16543755-nissan-juke-1.5dsl%20110bhp%20sv/</string>
+    <string name="carUrl2">https://www.blackwatermotors.ie/used-cars/16710076-toyota-aygo-1.0%2068bhp%20x-play/</string>
+    <string name="carUrl3">https://www.blackwatermotors.ie/used-cars/16041045-nissan-note-1.2%2080bhp%20sv%20sport%204dr/</string>
+    <string name="carUrl4">https://www.blackwatermotors.ie/used-cars/16878810-volkswagen-up-1.0%2075bhp%205dr%20automatic/</string>
+    <string name="carUrl5">https://www.blackwatermotors.ie/used-cars/16099658-renault-captur-1.5dci%2090bhp%20intense/</string>
+    <string name="carUrl6">https://www.blackwatermotors.ie/used-cars/16633853-ford-fiesta-1.25%2060bhp%20zetec/</string>
+    <string name="carUrl7">https://www.blackwatermotors.ie/used–cars/16250032–fiat–500–1.2%2069bhp%20pop/</string>
+    <string name="carUrl8">https://www.blackwatermotors.ie/used-cars/16244545-opel-corsa-1.4%2090bhp%20sc/?finances%5Bdeposit%5D=2748.75&amp;finances%5BproductName%5D=Hire%20Purchase&amp;finances%5Bterm%5D=60&amp;finances%5BproductType%5D=Hire%20Purchase&amp;finances%5BannualMileage%5D=10000&amp;finances%5Bdescription%5D=</string>
+    <string name="carUrl9">https://www.blackwatermotors.ie/used–cars/14498076–hyundai–ix35–2.0%20diesel%20136hp%20executive%204%20wheel%20drive%20automatic/</string>
+    <string name="carUrl10">https://www.blackwatermotors.ie/used–cars/14498076–hyundai–ix35–2.0%20diesel%20136hp%20executive%204%20wheel%20drive%20automatic/</string>
+    <string name="carUrl11">https://www.blackwatermotors.ie/used-cars/16633854-ford-focus-1.6tdci%2095bhp%20style/</string>
+    <string name="carUrl12">https://www.blackwatermotors.ie/used-cars/16396175-ford-fiesta-1.5d%2075bhp%20mca%20titanium%205dr/</string>
+    <string name="carUrl13">https://www.blackwatermotors.ie/used-cars/16305217-kia-venga-petrol%201.4l/?finances%5Bdeposit%5D=3797.5&amp;finances%5BproductName%5D=Hire%20Purchase&amp;finances%5Bterm%5D=60&amp;finances%5BproductType%5D=Hire%20Purchase&amp;finances%5BannualMileage%5D=10000&amp;finances%5Bdescription%5D=</string>
+    <string name="carUrl14">https://www.blackwatermotors.ie/used-cars/16359195-volkswagen-polo-1.0%2060bhp%205dr%20trendline%20with%20technology%20upgrade/</string>
+    <string name="carUrl15">https://www.blackwatermotors.ie/used-cars/16242159-volkswagen-polo-1.0%2060bhp%205dr%20trendline%20with%20technology%20upgrade/</string>
+
 </resources>
