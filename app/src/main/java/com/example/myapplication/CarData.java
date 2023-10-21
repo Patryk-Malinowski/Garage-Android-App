@@ -4,6 +4,8 @@
 
 package com.example.myapplication;
 
+import android.content.Context;
+
 import java.util.ArrayList;
 
 public class CarData {
@@ -12,7 +14,7 @@ public class CarData {
     public static ArrayList<Integer> carPrice = new ArrayList<>();
     public static ArrayList<Integer> carImage = new ArrayList<>();
     public static ArrayList<String> carUrl = new ArrayList<>();
-    public static void loadCarData() {
+    public static void loadCarData(Context context) {
 
 
         // data for car titles

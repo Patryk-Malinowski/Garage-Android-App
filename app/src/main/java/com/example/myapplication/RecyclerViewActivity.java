@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Switch;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,7 +19,6 @@ import java.util.ArrayList;
 public class RecyclerViewActivity extends AppCompatActivity implements MyRecyclerViewAdapter.ItemClickListener {
     MyRecyclerViewAdapter carListings;
     private boolean sortByPrice = false; // Default: do not sort by price
-
 
 
     @Override
@@ -58,6 +56,8 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
             updateRecyclerViewWithOther();
         }
 
+
+
     // Find the switch
         SwitchCompat priceSwitch = findViewById(R.id.switchPrice);
 
@@ -85,7 +85,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
         CarData.carUrl.clear();
 
 
-        CarData.loadCarData();
+        CarData.loadCarData(this);
 
 
         if (sortByPrice) {
@@ -110,7 +110,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
         BikeData.bikeImage.clear();
         BikeData.bikeUrl.clear();
 
-        BikeData.loadBikeData();
+        BikeData.loadBikeData(this);
 
 
         if (sortByPrice) {
@@ -135,7 +135,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
         OtherData.otherImage.clear();
         OtherData.otherUrl.clear();
 
-        OtherData.loadOtherData();
+        OtherData.loadOtherData(this);
 
 
         if (sortByPrice) {

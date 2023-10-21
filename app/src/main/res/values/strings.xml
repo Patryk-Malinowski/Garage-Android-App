@@ -8,4 +8,19 @@
     <string name="cars">Cars</string>
     <string name="bikes">Bikes</string>
     <string name="other">Other</string>
+    <string name="bikeUrl1">https://www.leehondacentre.com/product-page/2020-kawasaki-z1000sx</string>
+    <string name="bikeUrl2">https://www.leehondacentre.com/product-page/harley-davidson-115th-anniversary-flhcs-heritage-114-limited-edition</string>
+    <string name="bikeUrl3">https://www.leehondacentre.com/product-page/2020-suzuki-dl1050-v-strom</string>
+    <string name="bikeUrl4">https://www.leehondacentre.com/product-page/2019-triumph-1200-speed-twin</string>
+    <string name="bikeUrl5">https://www.leehondacentre.com/product-page/2019-suzuki-dl1000-v-strom</string>
+    <string name="bikeUrl6">https://www.leehondacentre.com/product-page/2016-triumph-tiger-800-xrx</string>
+    <string name="bikeUrl7">https://www.leehondacentre.com/product-page/honda-africa-twin-crf1100-d2-adventure-sports</string>
+    <string name="bikeUrl8">https://www.leehondacentre.com/product-page/2023-yamaha-mt-10</string>
+    <string name="bikeUrl9">https://www.leehondacentre.com/product-page/2023-kawasaki-z1000sx-ninja</string>
+    <string name="bikeUrl10">https://www.leehondacentre.com/product-page/2022-honda-cbr500r</string>
+    <string name="bikeUrl11">https://www.leehondacentre.com/product-page/2023-honda-adv350</string>
+    <string name="bikeUrl12">https://www.leehondacentre.com/product-page/2007-honda-deauville-nt700-1</string>
+    <string name="bikeUrl13">https://www.leehondacentre.com/product-page/2018-yamaha-mt-07a</string>
+    <string name="bikeUrl14">https://www.leehondacentre.com/product-page/2021-ducati-supersport-s</string>
+    <string name="bikeUrl15">https://www.leehondacentre.com/product-page/2005-suzuki-sv650</string>
 </resources>

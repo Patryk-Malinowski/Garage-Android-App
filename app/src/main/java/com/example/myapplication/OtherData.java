@@ -4,6 +4,8 @@
 
 package com.example.myapplication;
 
+import android.content.Context;
+
 import java.util.ArrayList;
 
 public class OtherData {
@@ -12,7 +14,7 @@ public class OtherData {
     public static ArrayList<Integer> otherImage = new ArrayList<>();
     public static ArrayList<String> otherUrl = new ArrayList<>();
     public static ArrayList<String> otherYear = new ArrayList<>();
-    public static void loadOtherData() {
+    public static void loadOtherData(Context context) {
 
 
         // data for other titles

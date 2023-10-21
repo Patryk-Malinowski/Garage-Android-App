@@ -12,7 +12,7 @@ public class SortDataByPrice {
         int n = prices.size();
         boolean swapped = true;
 
-        while (swapped) {
+        while (swapped) { // if no swap has occurred after passing through the arrayList, exit loop
             swapped = false;
             for (int i = 1; i < n; i++) {
                 if (prices.get(i - 1) > prices.get(i)) {
