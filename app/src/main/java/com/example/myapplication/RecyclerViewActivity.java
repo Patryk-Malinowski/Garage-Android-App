@@ -12,7 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -58,7 +59,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
 
 
 
-    // Find the switch
+        // Find the switch
         SwitchCompat priceSwitch = findViewById(R.id.switchPrice);
 
         // Set an OnCheckedChangeListener for the switch
@@ -73,6 +74,11 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
                 updateRecyclerViewWithOther();
             }
         });
+
+        // initialize button
+        FloatingActionButton homeButton = findViewById(R.id.homeButton);
+        // set onClickListener
+        homeButton.setOnClickListener(v -> onHomeClick());
     }
 
     // update recyclerView with car data from ArrayLists
@@ -175,7 +181,12 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyRecycle
     }
 
 
-
+    public void onHomeClick() {
+        // creates new intent that navigates from current activity to MainActivity
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // clear the activity stack
+        startActivity(intent);
+    }
 
 
 }

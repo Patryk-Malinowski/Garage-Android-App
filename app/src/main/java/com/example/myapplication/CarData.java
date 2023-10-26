@@ -69,7 +69,7 @@ public class CarData {
         carPrice.add(12450);
 
         // data for car images
-        carImage.add(R.drawable.car16);
+        carImage.add(R.drawable.car1);
         carImage.add(R.drawable.car2);
         carImage.add(R.drawable.car3);
         carImage.add(R.drawable.car4);

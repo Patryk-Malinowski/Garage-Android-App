@@ -1,3 +1,7 @@
+//Patryk Malinowski
+//R00210173
+//Garage App Project
+
 package com.example.myapplication;
 
 import java.util.ArrayList;

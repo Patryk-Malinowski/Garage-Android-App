@@ -1,3 +1,7 @@
+//Patryk Malinowski
+//R00210173
+//Garage App Project
+
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,11 +10,10 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -67,6 +70,7 @@ public class ListingActivity extends AppCompatActivity {
         }
         catch (ActivityNotFoundException e) {
             // toast for exception
+            Toast.makeText(this, "Activity not found", Toast.LENGTH_SHORT).show();
         }
     }
 

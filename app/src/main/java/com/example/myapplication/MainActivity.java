@@ -10,7 +10,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -41,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
                     // start the RecyclerViewActivity
                     Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
-                    intent.putExtra("category", selectedText.toLowerCase()); // passes category based on selected radio button
+                    intent.putExtra("category", selectedText.toLowerCase()); // passes category based on selected radio button (cars, bikes or other)
                     startActivity(intent);
                 }
             }

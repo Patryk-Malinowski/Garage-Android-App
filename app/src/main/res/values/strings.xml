@@ -38,5 +38,23 @@
     <string name="carUrl13">https://www.blackwatermotors.ie/used-cars/16305217-kia-venga-petrol%201.4l/?finances%5Bdeposit%5D=3797.5&amp;finances%5BproductName%5D=Hire%20Purchase&amp;finances%5Bterm%5D=60&amp;finances%5BproductType%5D=Hire%20Purchase&amp;finances%5BannualMileage%5D=10000&amp;finances%5Bdescription%5D=</string>
     <string name="carUrl14">https://www.blackwatermotors.ie/used-cars/16359195-volkswagen-polo-1.0%2060bhp%205dr%20trendline%20with%20technology%20upgrade/</string>
     <string name="carUrl15">https://www.blackwatermotors.ie/used-cars/16242159-volkswagen-polo-1.0%2060bhp%205dr%20trendline%20with%20technology%20upgrade/</string>
-
+    <string name="otherUrl1">https://www.donedeal.ie/carparts-for-sale/toyota-altezza-v2-front-bumper/35426163</string>
+    <string name="otherUrl2">https://www.donedeal.ie/carparts-for-sale/clutch-dual-mass-flywheel-kit-1-6-1-9-tdi/22380542</string>
+    <string name="otherUrl3">https://www.donedeal.ie/carparts-for-sale/formula-atlantic-4age-engine/35345593</string>
+    <string name="otherUrl4">https://www.donedeal.ie/carparts-for-sale/volkswagen-golf-polo-passat-tiguan-android-carplay/35203877</string>
+    <string name="otherUrl5">https://www.donedeal.ie/carparts-for-sale/sportchip-ecu-remapping-and-turbochargers/29331225</string>
+    <string name="otherUrl6">https://www.donedeal.ie/carparts-for-sale/mitsubshi-outlander-front-end/35199352</string>
+    <string name="otherUrl7">https://www.donedeal.ie/carparts-for-sale/mazda-mx5-nc-mk3-for-breaking/32318607</string>
+    <string name="otherUrl8">https://www.donedeal.ie/motorbikeextras-for-sale/motorbike-gear/35003423</string>
+    <string name="otherUrl9">https://www.donedeal.ie/motorbikeextras-for-sale/akrapovic-exhaust-tenere-700-/35425585</string>
+    <string name="otherUrl10">https://www.donedeal.ie/motorbikeextras-for-sale/s1000-rr-parts/35423068</string>
+    <string name="otherUrl11">https://www.donedeal.ie/motorbikeextras-for-sale/x-lite-x-803-rs-ultra-carbon-helmet-/35395319</string>
+    <string name="otherUrl12">https://www.donedeal.ie/motorbikeextras-for-sale/motorcycle-jacket-pants/35360195</string>
+    <string name="otherUrl13">https://www.donedeal.ie/motorbikeextras-for-sale/kawasaki-zx10-r-wheels/34376078</string>
+    <string name="otherUrl14">https://www.donedeal.ie/motorbikeextras-for-sale/harley-davidson-wind-deflectors/35189278</string>
+    <string name="otherUrl15">https://www.donedeal.ie/motorbikeextras-for-sale/motorcycle-trailer/35357704</string>
+    <string name="view_ad">View Ad</string>
+    <string name="go_back">Go Back</string>
+    <string name="home">Home</string>
+    <string name="sort_by_price">Sort by price</string>
 </resources>

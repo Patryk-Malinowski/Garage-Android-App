@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--Patryk Malinowski-->
+<!--R00210173-->
+<!--Garage App Project-->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -52,13 +57,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
-                app:srcCompat="@drawable/baseline_web_asset_24" />
+                app:srcCompat="@drawable/baseline_web_asset_24"
+                app:elevation="0dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="View Ad" />
+                android:text="@string/view_ad" />
 
         </LinearLayout>
 
@@ -75,13 +81,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
-            app:srcCompat="@drawable/baseline_keyboard_return_24" />
+            app:srcCompat="@drawable/baseline_keyboard_return_24"
+            app:elevation="0dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Go Back" />
+                android:text="@string/go_back" />
 
         </LinearLayout>
 
@@ -97,13 +104,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
-            app:srcCompat="@drawable/baseline_home_24" />
+            app:srcCompat="@drawable/baseline_home_24"
+            app:elevation="0dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Home" />
+                android:text="@string/home" />
 
         </LinearLayout>
 
